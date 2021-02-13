@@ -49,7 +49,7 @@ module.exports = {
 
         let end = false
         var guessedCorrect = false;
-        await collector.on('collect', m => {
+        collector.on('collect', m => {
             let guess = m.content;
             if (guess == result) {
                 message.channel.send("Correct!")

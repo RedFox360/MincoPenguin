@@ -1,26 +1,22 @@
 const cooldowns = new Map()
-
+const config = require("../../config")
 module.exports = (Discord, client, message) => {
-    const prefixes = ['!', ';', 'minco ']
     var count = 0;
-    var prefixMsg;
-    for (let i = 0; i < prefixes.length; i++) {
-        let prefix = prefixes[i];
-        if (message.author.bot) return;
+    for (let i = 0; i < config.prefixes.length; i++) {
+        let prefix = config.prefixes[i];
+        if (message.author.id == '235148962103951360') return message.channel.send("I won't listen to you, <@235148962103951360>")
+        else if (message.author.bot) return;
 
-        if (message.content.startsWith(prefix)) { prefixMsg = prefix; break; }
-        else count += 1;
-        if (count == prefixes.length) return;
-    }
-
-    const args = message.content.slice(prefixMsg.length).split(/ +/);
-    const cmd = args.shift().toLowerCase();
-
-    if (cmd != "say" && cmd != "poll" && cmd != 'curse' && cmd != 'report') {
-       for (let i = 0; i < args.length; i++) {
-            args[i] = args[i].toLowerCase();
+        if (message.content.startsWith(prefix)) { 
+          var currentPrefix = prefix; 
+          break; 
         }
+        else count++;
+        if (count == config.prefixes.length) return;
     }
+
+    const args = message.content.slice(currentPrefix.length).split(/ +/);
+    const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) ||
         client.commands.find(a => a.aliases && a.aliases.includes(cmd));
     if (!command) return message.channel.send("Invalid command");

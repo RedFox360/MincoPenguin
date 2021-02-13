@@ -3,7 +3,7 @@ module.exports = {
     description: 'Curses someone with a Harry Potter curse',
     execute(message, args, cmd, client, Discord) {
         const target = message.mentions.users.first();
-        let personCursed = message.guild.members.cache.get(target.id)
+        let personCursed = message.guild.members.cache.get(target.id);
         var curse = "";
         for (let i = 1; i < args.length; i++){
             curse+=" "+args[i];
