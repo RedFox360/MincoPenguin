@@ -1,4 +1,4 @@
 module.exports = {
     prefixes: ['!', 'minco '],
-    token: process.env.TOKEN,
+    token: process.env.TOKEN, 
 }

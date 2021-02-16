@@ -1,25 +1,24 @@
 const cooldowns = new Map()
-const config = require("../../config")
+const { prefixes } = require("../../config")
 module.exports = (Discord, client, message) => {
     var count = 0;
-    for (let i = 0; i < config.prefixes.length; i++) {
-        let prefix = config.prefixes[i];
-        if (message.author.id == '235148962103951360') return message.channel.send("I won't listen to you, <@235148962103951360>")
-        else if (message.author.bot) return;
-
+    
+    for (let i = 0; i < prefixes.length; i++) {
+        let prefix = prefixes[i];
+        if (message.author.id == client.user.id) return
         if (message.content.startsWith(prefix)) { 
           var currentPrefix = prefix; 
           break; 
         }
         else count++;
-        if (count == config.prefixes.length) return;
+        if (count == prefixes.length) return;
     }
-
+    if (message.author.id == '235148962103951360') return message.channel.send(`I won't listen to you, ${message.author.toString()}`)
     const args = message.content.slice(currentPrefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) ||
         client.commands.find(a => a.aliases && a.aliases.includes(cmd));
-    if (!command) return message.channel.send("Invalid command");
+    if (!command) return message.react('❌'); 
 
     if (!cooldowns.has(command.name)) cooldowns.set(command.name, new Discord.Collection());
 
@@ -44,6 +43,7 @@ module.exports = (Discord, client, message) => {
     try {
         command.execute(message, args, cmd, client, Discord);
     } catch (error) {
+        message.react('❌')
         message.channel.send("An error occured while trying to execute this command");
         console.log(error);
     }

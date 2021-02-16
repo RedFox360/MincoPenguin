@@ -1,3 +1,3 @@
-module.exports = () => {
-    console.log('Minco Penguin is online!');
+module.exports = (Discord, client) => {
+    console.log(`${client.user.tag} is online!`);       t
 }
