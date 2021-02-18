@@ -2,7 +2,7 @@ const cooldowns = new Map()
 const { prefixes } = require("../../config")
 module.exports = (Discord, client, message) => {
     var count = 0;
-    
+    var bannedPeople = [];
     for (let i = 0; i < prefixes.length; i++) {
         let prefix = prefixes[i];
         if (message.author.id == client.user.id) return
@@ -12,14 +12,16 @@ module.exports = (Discord, client, message) => {
         }
         else count++;
         if (count == prefixes.length) return;
-    }
+    } 
     if (message.author.id == '235148962103951360') return message.channel.send(`I won't listen to you, ${message.author.toString()}`)
     const args = message.content.slice(currentPrefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) ||
         client.commands.find(a => a.aliases && a.aliases.includes(cmd));
+    bannedPeople.forEach(person => {
+        if (message.author.id == person) return message.react('❌');
+    })
     if (!command) return message.react('❌'); 
-
     if (!cooldowns.has(command.name)) cooldowns.set(command.name, new Discord.Collection());
 
     const currentTime = Date.now();

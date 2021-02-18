@@ -19,6 +19,9 @@ module.exports = {
            name: '!curse <person> <Harry Potter curse>',
            value: 'curses someone with a harry potter curse' 
         }, {
+            name: '!laugh',
+            value: 'Sends a random laugh'
+        }, {
             name: '!favorite animal <Person>',
             value: 'Returns the favorite animal of the person you include',
         }, {

@@ -1,6 +1,7 @@
 const server = require('express')();
+const fs = require('fs')
 
-server.get('/', (req, res) => res.send('<html><h1 style="font-family:consolas">Minco Penguin Host Server</h1><p style="font-family:consolas">Minco Penguin is online!</p></html>'));
+server.get('/', (req, res) => res.send(fs.readFileSync('./website.html').toString()));
 
 module.exports = () => {
   server.listen(3000);

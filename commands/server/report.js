@@ -1,11 +1,13 @@
 module.exports = {
     name: 'report',
     description: 'Report someone for breaking the rules. USAGE: !report <@person> reason',
+    cooldown: 6,
     async execute(message, args, cmd, client, Discord) {
         if (!args.length) return message.channel.send("You didn't provide any arguments");
         if (!args[1]) return message.channel.send("You didn't provide a reason");
         const target = message.mentions.users.first();
         let memberTarget = message.guild.members.cache.get(target.id);
+        if (memberTarget.id == message.author.id) return message.channel.send("You can't report yourself!")
         var reason = "";
         var endMsg = true;
         for (let i = 1; i < args.length; i++){
@@ -22,7 +24,7 @@ module.exports = {
         const filter = m => m.author.id === message.author.id;
         const collector = message.channel.createMessageCollector(filter, { time: (15000) })
         await collector.on('collect', m => {
-            if (m.content == 'y') {
+            if (m.content == 'y' || m.content == 'yes') {
                 message.channel.send("Ticket sent");
                 client.users.cache.get('724786310711214118').send(ticket.setColor('GREEN'));
                 endMsg = false;
@@ -31,7 +33,7 @@ module.exports = {
             else {
                 if (m.content == 'n') message.channel.send("Cancelling...")
                 else message.channel.send("Terminating...")
-                endMessage = false;
+                endMsg = false;
                 collector.stop();
             }
         })

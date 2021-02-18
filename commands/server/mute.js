@@ -14,6 +14,7 @@ module.exports = {
                 let mainRole = message.guild.roles.cache.find(role => role.name === roles[0]);
                 let muteRole = message.guild.roles.cache.find(role => role.name === roles[1]);
                 let memberTarget = message.guild.members.cache.get(target.id);
+                if (memberTarget.hasPermission('ADMINISTRATOR')) return message.channel.send(`<@${memberTarget.id}> cannot be muted`)
                 var description = `<@${memberTarget.user.id}> has been muted`
                 if (args[1]) description += ` for ${args[1]}`
                 let muteEmbed = new Discord.MessageEmbed()

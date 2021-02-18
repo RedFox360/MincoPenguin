@@ -11,7 +11,7 @@ module.exports = {
             .setDescription(msgArgs)
             .setThumbnail(message.author.avatarURL())
         message.channel.send(pollEmbed).then(msg => {
-            react.forEach(emoji => msg.react(emoji))
+            react.forEach(emoji => msg.react(emoji));
         })
     }
 }
