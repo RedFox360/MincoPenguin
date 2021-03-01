@@ -7,9 +7,9 @@ module.exports = {
                 message.channel.send("You didn't provide any arguments.")
             } else {
                 var slowmode;
-                if (args[0] != 'off') slowmode = args[0]
-                else slowmode = 0
-                message.channel.setRateLimitPerUser(slowmode, null)
+                if (args[0] == 'off') slowmode = 0;
+                else slowmode = args[0];
+                message.channel.setRateLimitPerUser(slowmode, null);
                 let confirmEmbed = new Discord.MessageEmbed()
                     .setColor('#7E78D2')
                     .setTitle("Slowmode")

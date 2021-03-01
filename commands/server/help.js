@@ -3,6 +3,7 @@ module.exports = {
     description: "Help command",
     execute(message, args, cmd, client, Discord) {
         let helpEmbed = new Discord.MessageEmbed()
+        .setAuthor('Minco Penguin')
         .setColor('#1C448E')
         .setTitle('Command Manual')
         .setDescription("PREFIXES: '!', ';', and 'minco '\nDon't include < > in the actual command\nParentheses ( ) show optional arguments")
@@ -12,6 +13,9 @@ module.exports = {
         }, {
             name: '!birthday <Person>',
             value: 'Returns the birthday of the person you include',
+        }, {
+            name: '!rainbow',
+            value: 'Returns the NEW rainbow!'  
         }, {
             name: '!favorite color <Person>',
             value: 'Returns the favorite color of the person you include',
@@ -28,11 +32,11 @@ module.exports = {
             name: '!favorite food <Person>',
             value: 'Returns the favorite food of the person you include',
         }, {
-            name: '!candy bear (DECIMATE)',
-            value: 'Sends in the CANDY BEARS!',
-        }, {
             name: '!hello',
             value: 'Sends a random hello message',
+        }, {
+            name: '!bye',
+            value: 'Sends a random goodbye message'
         }, {
             name: '!say <message>',
             value: 'Returns the message you wrote',
@@ -49,8 +53,8 @@ module.exports = {
             name: '!fortune',
             value: 'Returns a fortune'
         }, {
-           name: '!report <@person> <reason>',
-           value: 'Reports someone for breaking the rules' 
+            name: '!magic8ball <Question>',
+            value: 'returns a random magic 8 ball answer to the question\nAliases: !8ball, !magic8b, !8b'
         }, {
             name: '!army (Carl)',
             value: 'Returns the army of Minco Penguin or Carl-bot'

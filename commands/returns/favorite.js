@@ -47,7 +47,7 @@ module.exports = {
                     message.channel.send("Blue");
                 }
                 else if (args[1] == 'Claire') {
-                    message.channel.send("ALL the colors!");
+                    message.channel.send("ALL the colors! AKA, a rainbow! 🌈🌦");
                 }
                 else if (args[1] == 'Emma') {
                     message.channel.send("Tiffany Blue");
@@ -56,34 +56,34 @@ module.exports = {
                     message.channel.send("Blue");
                 }
             }
-            else if (args[0] == 'Animal') {
+            else if (args[0] == 'animal') {
                 if (args[1] == 'Sameer') {
-                    message.channel.send("Adélie Penguin");
+                    message.channel.send("Adélie Penguin :penguin:");
                 }
                 else if (args[1] == 'Aiden') {
-                    message.channel.send("Tiger");
+                    message.channel.send("Tiger :tiger:");
                 }
                 else if (args[1] == 'Ethan') {
-                    message.channel.send("Elephant");
+                    message.channel.send("Elephant :elephant:");
                 }
                 else if (args[1] == 'Claire') {
-                    message.channel.send("Bear");
+                    message.channel.send("Bear :bear:");
                 }
                 else if (args[1] == 'Emma') {
-                    message.channel.send("Shih tzu dog");
+                    message.channel.send("Shih tzu dog :dog:");
                 }
                 else if (args[1] == 'Xander') {
-                    message.channel.send("Dog");
+                    message.channel.send("Dog :dog:");
                 }
             } else if (args[0] == 'food') {
                 if (args[1] == 'Sameer' || args[1] == 'Aiden') {
-                    message.channel.send("Nigiri Sushi");
+                    message.channel.send("Nigiri Sushi :sushi:");
                 } else if (args[1] == 'Claire') {
                     message.channel.send("Claire does not have a favorite food");
                 } else if (args[1] == 'Emma') {
                     message.channel.send("Potato chips");
                 } else if (args[1] == 'Xander') {
-                    message.channel.send("Sushi");
+                    message.channel.send("Sushi :sushi:");
                 }
             } else {
                 message.channel.send("Type in a valid argument: color or animal");

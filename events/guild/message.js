@@ -2,7 +2,7 @@ const cooldowns = new Map()
 const { prefixes } = require("../../config")
 module.exports = (Discord, client, message) => {
     var count = 0;
-    var bannedPeople = [];
+    const bannedPeople = [];
     for (let i = 0; i < prefixes.length; i++) {
         let prefix = prefixes[i];
         if (message.author.id == client.user.id) return
@@ -19,9 +19,11 @@ module.exports = (Discord, client, message) => {
     const command = client.commands.get(cmd) ||
         client.commands.find(a => a.aliases && a.aliases.includes(cmd));
     bannedPeople.forEach(person => {
-        if (message.author.id == person) return message.react('❌');
+        if (message.author.id == person) {
+            return message.channel.send("You were banned from using Minco Penguin.")
+        }
     })
-    if (!command) return message.react('❌'); 
+    if (!command) return 
     if (!cooldowns.has(command.name)) cooldowns.set(command.name, new Discord.Collection());
 
     const currentTime = Date.now();
