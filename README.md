@@ -27,5 +27,5 @@ code is available on [GitHub: @RedFox360/MincoPenguin](https://github.com/RedFox
 If you decide to fork this repository, create a new file called `.env` and add a new line:
 
 ```
-TOKEN = <your discord bot token here>
+TOKEN=<your discord bot token here>
 ```
