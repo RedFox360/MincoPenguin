@@ -1,6 +1,6 @@
 # Minco Penguin
 Created by: RedFox360
-Cocoa15132#3688 on Discord
+**sameer p**#3688 on Discord
 
 **[Invite](https://discord.com/oauth2/authorize?client_id=725917919292162051&scope=bot&permissions=2147483647)**  Minco Penguin to your server! 
 If the bot isn't online visit the [Minco Penguin server](https://mincopenguin.redfox360.repl.co/)

@@ -61,7 +61,9 @@ module.exports = {
         })
         .setThumbnail('https://cdn.shopify.com/s/files/1/2040/0303/products/Simple_Cute_Kawaii_Nursery_Animal_Cartoon_-_Penguin_696545712_1024x1024@2x.jpg?v=1499733886')
         if (!args.length) return message.channel.send(helpEmbed)
+        
         command = client.commands.get(args[0])
         if(command) message.channel.send(command.description)
+        else message.channel.send(`Invalid command ${args[0]}`)
     }
 }

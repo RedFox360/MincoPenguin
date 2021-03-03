@@ -79,7 +79,7 @@ module.exports = {
                 if (args[1] == 'Sameer' || args[1] == 'Aiden') {
                     message.channel.send("Nigiri Sushi :sushi:");
                 } else if (args[1] == 'Claire') {
-                    message.channel.send("Claire does not have a favorite food");
+                    message.channel.send("Pizza, Lambchops, Potatoes, Sausages, and a lot more");
                 } else if (args[1] == 'Emma') {
                     message.channel.send("Potato chips");
                 } else if (args[1] == 'Xander') {

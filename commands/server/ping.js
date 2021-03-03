@@ -6,7 +6,9 @@ module.exports = {
         var status = "online";
         if (Math.round(client.ws.ping) > 200)
             status = "lagging"
-        if (!args[0]) {
+        if (args[0] == 'raw') {
+            message.channel.send(`Execution Time: **${Date.now() - message.createdTimestamp}ms**\nClient Latency: **${Math.round(client.ws.ping)}ms**`)
+        } else {
             var color;
             if (status == "lagging") color = "#ff0000"
             else color = "32E6C5"
@@ -20,8 +22,6 @@ module.exports = {
                     { name: 'Client Latency', value: `**${Math.round(client.ws.ping)}ms**` }
                 )
             message.channel.send(pingEmbed)
-        } else if (args[0] == 'raw') {
-            message.channel.send(`pong!\nStatus: **${status}**\nExecution Time: **${Date.now() - message.createdTimestamp}ms**\nClient Latency: **${Math.round(client.ws.ping)}ms**`)
         }
     }
 }
