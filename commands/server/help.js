@@ -11,6 +11,12 @@ module.exports = {
             name: '!ping',
             value: 'Check if the bot is online',
         }, {
+            name: '!poll <Question>',
+            value: 'Sends a poll with thumbs up/thumbs down reactions'
+        }, {
+           name: '!spoll <Question>',
+           value: 'Sends a poll with thumbs up/thumbs down/shrug reactions' 
+        }, {
             name: '!birthday <Person>',
             value: 'Returns the birthday of the person you include',
         }, {
@@ -55,6 +61,9 @@ module.exports = {
         }, {
             name: '!magic8ball <Question>',
             value: 'returns a random magic 8 ball answer to the question\nAliases: !8ball, !magic8b, !8b'
+        }, {
+            name: '!prime <Number>',
+            value: 'Checks if a number is prime or not'
         }, {
             name: '!army (Carl)',
             value: 'Returns the army of Minco Penguin or Carl-bot'

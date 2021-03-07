@@ -1,7 +1,7 @@
 module.exports = {
     name: 'birthday',
     aliases: ['bday', 'b'],
-    cooldown: 5,
+    cooldown: 3,
     description: "View everyone's birthday. Usage: birthday <name>",
     execute(message, args, cmd, client, Discord) {
         if (!args.length) {

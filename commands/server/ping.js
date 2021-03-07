@@ -7,15 +7,14 @@ module.exports = {
         if (Math.round(client.ws.ping) > 200)
             status = "lagging"
         if (args[0] == 'raw') {
-            message.channel.send(`Execution Time: **${Date.now() - message.createdTimestamp}ms**\nClient Latency: **${Math.round(client.ws.ping)}ms**`)
+            message.channel.send(`Execution Time: **${Date.now() - message.createdTimestamp}ms**\nClient Latency: **${Math.round(client.ws.ping)}ms**\nNode version: **12.16.1**`)
         } else {
             var color;
-            if (status == "lagging") color = "#ff0000"
+            if (status == "lagging") color = "ff0000"
             else color = "32E6C5"
             let pingEmbed = new Discord.MessageEmbed()
                 .setTitle(":robot_face: Pong!")
                 .setColor(color)
-                .setThumbnail(message.author.avatarURL())
                 .addFields(
                     { name: 'Status:', value: `**${status}**` },
                     { name: 'Execution Time:', value: `**${Date.now() - message.createdTimestamp}ms**`},

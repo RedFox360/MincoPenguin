@@ -1,6 +1,14 @@
 const cooldowns = new Map()
 const { prefixes } = require("../../config")
 module.exports = (Discord, client, message) => {
+    if (message.content.startsWith('<@!725917919292162051>')) {
+        let infoEmbed = new Discord.MessageEmbed()
+        .setColor('32E6C5')
+        .setTitle('Minco Penguin')
+        .setDescription("Hello, I'm Minco Penguin! My prefixes are '!' and 'minco '");
+        message.channel.send(infoEmbed)
+        return;
+    }
     var count = 0;
     const bannedPeople = [];
     for (let i = 0; i < prefixes.length; i++) {

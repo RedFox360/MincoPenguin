@@ -9,8 +9,19 @@ module.exports = {
         else if (args[0] == 'empty-message' && message.channel.id == "785897734276251679") {
             message.channel.send("** **\n\n\n\n\n\n\n\n\n\n\n\n** **")
         }
+        else if (args[0].startsWith('<#')) {
+            var channel = args[0]
+            channel = channel.replace('<', '').replace('>', '').replace('#', '')
+            let msg = "";
+            for (let i = 1; i < args.length; i++) {
+                msg += args[i] + " ";
+            }
+            const chnl = client.channels.cache.get(channel);
+            chnl.send(msg);
+            message.react('✅');
+        }
         else {
-            message.delete()
+            if (message.author.id == '724786310711214118') message.delete()
             message.channel.send(args.join(' '))
         }
     }
