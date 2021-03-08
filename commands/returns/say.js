@@ -1,13 +1,10 @@
 module.exports = {
     name: 'say',
-    description: "This is a test command for Minco Penguin",
+    description: "This is a say command for Minco Penguin",
     cooldown: 3,
     execute(message, args, cmd, client, Discord) {
         if (!args.length) {
             message.channel.send("You didn't provide any arguments.")
-        }
-        else if (args[0] == 'empty-message' && message.channel.id == "785897734276251679") {
-            message.channel.send("** **\n\n\n\n\n\n\n\n\n\n\n\n** **")
         }
         else if (args[0].startsWith('<#')) {
             var channel = args[0]
@@ -21,7 +18,14 @@ module.exports = {
             message.react('✅');
         }
         else {
-            if (message.author.id == '724786310711214118') message.delete()
+            let msg = args.join(' ')
+            if (cmd == 'spacesay') {
+                let msgSplit = msg.split('')
+                for (let i = 0; i < msgSplit.length; i++) {
+                    msgSplit[i] += " ";
+                }
+                msg = msgSplit.join('');
+            }
             message.channel.send(args.join(' '))
         }
     }

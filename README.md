@@ -1,8 +1,7 @@
 # Minco Penguin
 Created by: RedFox360
-**sameer p**#3688 on Discord
+**sameer p**#3688 on Discord (DM me if you want me to add Minco Penguin to your server)
 
-**[Invite](https://discord.com/oauth2/authorize?client_id=725917919292162051&scope=bot&permissions=2147483647)**  Minco Penguin to your server! 
 If the bot isn't online visit the [Minco Penguin server](https://mincopenguin.redfox360.repl.co/)
 
 + created using tutorials by [CodeLyon](https://www.youtube.com/codelyon)

@@ -6,7 +6,7 @@ module.exports = {
         .setAuthor('Minco Penguin')
         .setColor('#1C448E')
         .setTitle('Command Manual')
-        .setDescription("PREFIXES: '!', ';', and 'minco '\nDon't include < > in the actual command\nParentheses ( ) show optional arguments")
+        .setDescription("PREFIXES: '!', ';', and 'minco '\nDon't include < > in the actual command\nParentheses ( ) show optional arguments\nAccess the Minco Penguin help page here: https://mincopenguin.redfox360.repl.co/")
         .addFields({
             name: '!ping',
             value: 'Check if the bot is online',
