@@ -8,8 +8,6 @@ If the bot isn't online visit the [Minco Penguin server](https://mincopenguin.re
 
 code is available on [GitHub: @RedFox360/MincoPenguin](https://github.com/RedFox360/MincoPenguin)
 
-
-
 ## Packages used:
 + express
 + ms
@@ -20,8 +18,6 @@ code is available on [GitHub: @RedFox360/MincoPenguin](https://github.com/RedFox
 ## Other links:
 + server: https://mincopenguin.redfox360.repl.co/
 + code on [Repl.it: @RedFox360/MincoPenguin](https://repl.it/@RedFox360/MincoPenguin#README.md)
-
-
 
 If you decide to fork this repository, create a new file called `.env` and add a new line:
 
